@@ -17,7 +17,7 @@ import { configDotenv } from "dotenv";
 const app = express();
 const port = process.env.PORT||4000;
 
-const allowedOrigins = ['https://celadon-peony-a71dd8.netlify.app/'];
+const allowedOrigins = ['https://celadon-peony-a71dd8.netlify.app'];
 console.log(allowedOrigins);
 
 
@@ -50,6 +50,10 @@ app.use('/api/v1/',cartRouter)
 app.use('/api/v1/payment/',paymentRouter)
 app.use('/api/v1/',orderRouter)
 app.use('/images',express.static(('uploads')))
+
+// app.get('/', (req, res) => {
+//   res.send('Welcome to the API Server! The server is up and running.');
+// });
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URL, {
