@@ -17,7 +17,7 @@ import { configDotenv } from "dotenv";
 const app = express();
 const port = process.env.PORT||4000;
 
-const allowedOrigins = ['http://localhost:5173'];
+const allowedOrigins = ['https://celadon-peony-a71dd8.netlify.app/'];
 
 app.use(cors({
   origin: function (origin, callback) {
