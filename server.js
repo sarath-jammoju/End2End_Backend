@@ -40,17 +40,17 @@ configDotenv()
 app.use(bodyParser.json());
 
 // Routes
-// app.use('/v1/ecommerce/api', userRouter);
-// app.use("/api/v1/",adminRouter)
-// app.use('/api/v1/products', productRouter);
-// app.use('/api/v1/',cartRouter)
-// app.use('/api/v1/payment/',paymentRouter)
-// app.use('/api/v1/',orderRouter)
-// app.use('/images',express.static(('uploads')))
+app.use('/v1/ecommerce/api', userRouter);
+app.use("/api/v1/",adminRouter)
+app.use('/api/v1/products', productRouter);
+app.use('/api/v1/',cartRouter)
+app.use('/api/v1/payment/',paymentRouter)
+app.use('/api/v1/',orderRouter)
+app.use('/images',express.static(('uploads')))
 
-app.get('/', (req, res) => {
-  res.send('Welcome to the API Server! The server is up and running.');
-});
+// app.get('/', (req, res) => {
+//   res.send('Welcome to the API Server! The server is up and running.');
+// });
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGODB_URL, {
